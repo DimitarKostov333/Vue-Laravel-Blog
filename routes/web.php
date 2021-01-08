@@ -11,7 +11,11 @@
 |
 */
 Route::get('/', 'PostController@index');
-Route::resource('/posts', 'PostController', ['except' => 'index']);
+
+Route::group(['middleware' => ['XssSanitizer']], function () {
+    Route::resource('/posts', 'PostController', ['except' => 'index']);
+});
+
 Auth::routes();
 
 

@@ -44,7 +44,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'postTitle' => 'string|required|min:5|max:200',
+            'postContent' => 'string|required|min:5|max:1000',
+        ]);
+
+        Post::create($request->all());
+
+        return redirect('/');
     }
 
     /**

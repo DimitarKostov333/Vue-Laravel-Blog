@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -14,7 +16,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        // Get all posts from db
+        $allPosts = Post::all();
+
+        // Check if user is logged in
+        $userIsLoggedIn = Auth::check();
+
+        // Parse posts to the index page
+        return view('index', compact('allPosts','userIsLoggedIn'));
     }
 
     /**
@@ -24,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('actions.create');
     }
 
     /**
@@ -55,9 +64,9 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit()
     {
-        //
+
     }
 
     /**

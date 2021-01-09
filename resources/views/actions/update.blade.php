@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if ($errors->any())tink
+        @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)

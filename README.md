@@ -16,22 +16,23 @@ Installation:
 3) Rename .env.example to .env
 4) Open the .env file and remove all the variables starting with DB_ then just add the following variable:<br />
    DB_CONNECTION=sqlite
-5) Run the composer install command in terminal.
-6) Generate a key:<br/>
+5) Navigate to the database folder and create a file - "database.sqlite"
+6) Run the composer install command in terminal.
+7) Generate a key:<br/>
    php artisan key:generate
-7) Run all the migrations:<br/>
+8) Run all the migrations:<br/>
    php artisan migrate
-8) Run the seeder:<br/>
+9) Seed the database:<br/>
    php artisan db:seed
-7) Install node modules:<br/>
+10) Install node modules:<br/>
     npm install
-8) Compile all the assets:<br/>
+11) Compile all the assets:<br/>
     npm run dev
    
-9) You can now run the application:<br/>
+12) You can now run the application:<br/>
     php artisan serve.
    
-10) To login please use the following test user credentials:<br/>
+13) To login please use the following test user credentials:<br/>
     Username: Test User
     Password: password
    

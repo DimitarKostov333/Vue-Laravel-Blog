@@ -24,7 +24,7 @@ Installation:
    php artisan migrate
 9) Seed the database:<br/>
    php artisan db:seed
-10) Install node modules:<br/>
+10) Install node dependencies:<br/>
     npm install
 11) Compile all the assets:<br/>
     npm run dev
@@ -35,6 +35,8 @@ Installation:
 13) To login please use the following test user credentials:<br/>
     Username: Test User
     Password: password
+    
+PS: You might need to rename the APP_URL (in env file) to http://127.0.0.1:8000 if you run the artisan serve command depending on what url and port iss assigned.
    
 
 

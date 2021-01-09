@@ -1,5 +1,5 @@
 # Laravel Test Blog
-A blog project created with Laravel 6 (LTS) and Vue.js
+A blog project created with Laravel 6 (LTS)
 <br />
 <br />
 

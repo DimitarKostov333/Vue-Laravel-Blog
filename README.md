@@ -33,8 +33,9 @@ Installation:
     php artisan serve.
    
 13) To login please use the following test user credentials:<br/>
-    Username: Test User
+    Username: Test User<br/>
     Password: password
+    <br/>
     
 PS: You might need to rename the APP_URL (in env file) to http://127.0.0.1:8000 if you run the artisan serve command depending on what url and port iss assigned.
    

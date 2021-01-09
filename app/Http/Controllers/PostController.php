@@ -109,7 +109,6 @@ class PostController extends Controller
         $updatedPost = Post::findOrFail($post->id);
         $updatedPost->title = $request->title;
         $updatedPost->content = $request->contents;
-        $updatedPost->save();
 
         // Update the post content and send a message back to the main page.
         if($updatedPost->save()){

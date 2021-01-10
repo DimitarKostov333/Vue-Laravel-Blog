@@ -32,8 +32,8 @@ Installation:
 12) You can now run the application:<br/>
     php artisan serve.
    
-13) To login please use the following test user credentials:<br/>
-    Username: Test User<br/>
+13) Use the following credentials to log in:<br/>
+    Username: test@gmail.com<br/>
     Password: password
     <br/>
     

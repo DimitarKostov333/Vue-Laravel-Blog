@@ -47,8 +47,8 @@ class PostController extends Controller
     {
         // Validate user input
         $validatedData = $request->validate([
-            'title' => 'string|required|min:5|max:200',
-            'content' => 'string|required|min:5|max:1000',
+            'title' => 'string|required|min:5|max:100',
+            'content' => 'string|required|min:5|max:2000',
         ]);
 
         // If there are no validation errors create a post in the database with Author id.
@@ -59,7 +59,7 @@ class PostController extends Controller
             Session::flash('success', $request->title . ' created successfully.');
             return redirect('/');
         }else{
-            Session::flash('success', 'Error: ' . $request->title . ' could not be created.');
+            Session::flash('error', 'Error: ' . $request->title . ' could not be created.');
             return redirect('/');
         }
     }
@@ -101,8 +101,8 @@ class PostController extends Controller
     {
         // Validate the input before updating the post.
         $validatedData = $request->validate([
-            'title' => 'string|required|min:5|max:200',
-            'contents' => 'string|required|min:5|max:1000',
+            'title' => 'string|required|min:5|max:100',
+            'contents' => 'string|required|min:5|max:2000',
         ]);
 
         // Find the blog that needs to be updated by id and update all the content.

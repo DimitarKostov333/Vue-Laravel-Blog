@@ -51,10 +51,10 @@ class PostController extends Controller
             'content' => 'string|required|min:5|max:2000',
         ]);
 
-        // If there are no validation errors create a post in the database with Author id.
+        // If there are no validation errors create a post in the database with author id.
         $createPost = Post::create($request->all() + ['author' => Auth::id()]);
 
-        // If the post is created send a success message back to the home page
+        // If post is created, send a message back to the home page
         if($createPost) {
             Session::flash('success', $request->title . ' created successfully.');
             return redirect('/');
@@ -86,7 +86,7 @@ class PostController extends Controller
         // Find the post that needs to be edited.
         $post = Post::find($id);
 
-        // Parse the post information to the update view.
+        // Send the post data to the update view.
         return view('actions.update', compact('post'));
     }
 
@@ -105,7 +105,7 @@ class PostController extends Controller
             'contents' => 'string|required|min:5|max:2000',
         ]);
 
-        // Find the blog that needs to be updated by id and update all the content.
+        // If there are no validation errors, find the blog by id and edit the title and contents.
         $updatedPost = Post::findOrFail($post->id);
         $updatedPost->title = $request->title;
         $updatedPost->content = $request->contents;
@@ -115,7 +115,7 @@ class PostController extends Controller
             Session::flash('success', $request->title . ' updated successfully.');
             return redirect('/');
         }else{
-            Session::flash('error', 'Error: Post could not be updated');
+            Session::flash('error', 'Error: Post could not be updated.');
             return redirect('/');
         }
     }
@@ -128,16 +128,15 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        // Find the post by id in the post model and delete it
+        // Find the post by id.
         $posts = Post::find($post->id);
-        $postName = $posts->name;
 
-        // If post is deleted successfully send a success message back to the home page.
+        // If the post is deleted successfully send a message back to the home page.
         if($posts->delete()){
-            Session::flash('success', $postName . ' was deleted.');
+            Session::flash('success', 'Post deleted successfully.');
             return redirect('/');
         }else{
-            Session::flash('error', 'Error: ' . $postName . ' could not delete post');
+            Session::flash('error', 'Error: Post could not deleted.');
             return redirect('/');
         }
     }

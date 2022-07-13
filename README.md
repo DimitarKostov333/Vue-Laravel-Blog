@@ -24,6 +24,12 @@ Installation:<br />
     npm run dev
 10) You can now run the application:<br/>
     php artisan serve.
+    <br/> <br/>
+To login please use the following test user credentials:<br/><br/>
+
+Username: Test User<br/>
+Password: password
+<br/>
 
    
 

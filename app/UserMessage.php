@@ -4,19 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class UserMessage extends Model
 {
+    protected $table = 'user_message';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'author'
+        'user', 'message'
     ];
 
     public function user()
     {
-        return $this->belongsTo('App\User','author','id');
+        return $this->belongsTo('App\User','user','id');
     }
 }

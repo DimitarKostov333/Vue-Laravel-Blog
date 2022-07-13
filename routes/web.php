@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'PostController@index');
+Route::get('/', 'MessageController@index');
 
 Route::group(['middleware' => ['XssSanitizer']], function () {
-    Route::resource('/posts', 'PostController', ['except' => 'index']);
+    Route::resource('/message', 'MessageController', ['except' => 'index']);
 });
 
 Auth::routes();
